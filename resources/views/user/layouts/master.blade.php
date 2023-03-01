@@ -60,7 +60,7 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('user#home') }}" class="nav-item nav-link active">Home</a>
                             <a href="{{ route('cart#list') }}" class="nav-item nav-link">My Cart</a>
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a href="{{ route('contact#contactPage') }}" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
 
@@ -68,7 +68,7 @@
                                 <button type="button" class="btn btn-sm dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-user-circle text-primary" aria-hidden="true"></i>
                                     <span class="badge text-secondary">{{ Auth::user()->name }}</span></button>
-                                <ul class="dropdown-menu dropdown-menu-right">
+                                <ul class="dropdown-menu dropdown-menu-right p-3">
                                     <li class="my-2"> <a class="dropdown-item"
                                             href="{{ route('profile#updateProfile') }}"><i
                                                 class="fa-solid fa-user me-1"></i>Profile</a></li>
@@ -77,7 +77,7 @@
                                                 class="fa-solid fa-key me-1"></i>
                                             Change
                                             Password</a></li>
-                                    <li class="text-center">
+                                    <li class="text-center my-2">
                                         <form action="{{ route('logout') }}" method="post">
                                             @csrf
                                             <button type="submit" class="btn btn-dark px-5 ml-3">

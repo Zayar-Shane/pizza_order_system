@@ -75,6 +75,10 @@
                             <a href="{{ route('admin#userList') }}">
                                 <i class="fa fa-users" aria-hidden="true"></i> User List</a>
                         </li>
+                        <li>
+                            <a href="{{ route('contact#message') }}">
+                                <i class="fa-solid fa-comment-dots"></i> Messages </a>
+                        </li>
                     </ul>
                 </nav>
             </div>

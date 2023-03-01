@@ -12,47 +12,41 @@
                 <div class="col-md-12">
                     <!-- DATA TABLE -->
                     <div class="table-data__tool">
-                        <div class="table-data__tool-left">
+                        <div class="table-data__tool-left col-4">
                             <div class="overview-wrap">
-                                <h2 class="title-1">Order List</h2>
+                                <h2 class="title-1">User List</h2>
+
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <form action="{{ route('admin#orderStatus') }}" method="get">
+                                    @csrf
+                                    <div class=" col-8 input-group mb-3">
+
+                                        <label class="input-group-text fs-5" for="inputGroupSelect02"><i
+                                                class="fa-solid fa-database me-2"></i> {{ count($order) }}</label>
+                                        <select class="form-select" name="orderStatus" id="inputGroupSelect02">
+                                            <option value="" @if (request('orderStatus') == null) selected @endif>All
+                                            </option>
+                                            <option value="0" @if (request('orderStatus') == '0') selected @endif>Pending
+                                            </option>
+                                            <option value="1" @if (request('orderStatus') == '1') selected @endif>Accept
+                                            </option>
+                                            <option value="2" @if (request('orderStatus') == '2') selected @endif>Reject
+                                            </option>
+                                        </select>
+                                        <button class="btn btn-sm btn-dark input-group-text"type="submit"> <i
+                                                class="fa-solid fa-magnifying-glass me-2"></i>Search</button>
+                                    </div>
+                                </form>
 
                             </div>
                         </div>
 
-
-                        <div class="col-4 offset-1">
-                            <form action="{{ route('category#list') }}" method="get">
-                                <div class="d-flex">
-                                    <input type="text" name="key" class="form-control" value="{{ request('key') }}"
-                                        placeholder="Search...">
-                                    <button type="submit" class="btn btn-dark">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
                     </div>
 
-                    <div class="row">
-                        <form action="{{ route('admin#orderStatus') }}" method="get">
-                            @csrf
-                            <div class=" col-6 input-group mb-3">
 
-                                <label class="input-group-text fs-5" for="inputGroupSelect02"><i
-                                        class="fa-solid fa-database me-2"></i> {{ count($order) }}</label>
-                                <select class="form-select" name="orderStatus" id="inputGroupSelect02">
-                                    <option value="" @if (request('orderStatus') == null) selected @endif>All</option>
-                                    <option value="0" @if (request('orderStatus') == '0') selected @endif>Pending
-                                    </option>
-                                    <option value="1" @if (request('orderStatus') == '1') selected @endif>Accept</option>
-                                    <option value="2" @if (request('orderStatus') == '2') selected @endif>Reject</option>
-                                </select>
-                                <button class="btn btn-sm btn-dark input-group-text"type="submit"> <i
-                                        class="fa-solid fa-magnifying-glass me-2"></i>Search</button>
-                            </div>
-                        </form>
-
-                    </div>
 
                     @if (count($order) != 0)
                         <div class="table-responsive table-responsive-data2">
@@ -95,8 +89,8 @@
                             </table>
                         </div>
                     @else
-                        <div class="text-seconda fs-4">
-                            There is no order list.
+                        <div class="text-center fs-4">
+                            <h3 class="text-danger">There is no order list.</h3>
                         </div>
                     @endif
                     <!-- END DATA TABLE -->

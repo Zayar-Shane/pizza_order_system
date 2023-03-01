@@ -64,21 +64,21 @@
                         </div>
                     </div>
 
+                    @if (count($pizza) != 0)
+                        <div class="table-responsive table-responsive-data2 mt-2">
+                            <table class="table table-data2 text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Category</th>
+                                        <th>View Count</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                    <div class="table-responsive table-responsive-data2 mt-2">
-                        <table class="table table-data2 text-center">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Category</th>
-                                    <th>View Count</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if (count($pizza) != null)
                                     @foreach ($pizza as $p)
                                         <tr class="tr-shadow">
                                             <td class="col-2"><img src="{{ asset('storage/' . $p->image) }}"
@@ -113,14 +113,14 @@
 
                                         </tr>
                                     @endforeach
-                                @else
-                                    <h4>There is no product item.</h4>
-                                @endif
-                            </tbody>
-                        </table>
 
-                    </div>
+                                </tbody>
+                            </table>
 
+                        </div>
+                    @else
+                        <h4 class="text-center mt-5 text-danger">There is no product item.</h4>
+                    @endif
                     <div class="mt-3">
                         {{ $pizza->links() }}
                         {{-- {{ $categories->appends(request()->query())->links() }} --}}

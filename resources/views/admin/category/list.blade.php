@@ -81,7 +81,7 @@
                                         <tr class="tr-shadow">
                                             <td>{{ $category->id }}</td>
                                             <td class="col-md-6">{{ $category->name }}</td>
-                                            <td>{{ $category->created_at->format('j-M-Y') }}</td>
+                                            <td>{{ $category->created_at->format('M-j-Y') }}</td>
                                             <td>
                                             <td>
                                                 <div class="table-data-feature">
@@ -110,7 +110,7 @@
                             </table>
                         </div>
                     @else
-                        <h2 class="text-secondary text-center mt-3">There is no category item</h2>
+                        <h2 class="text-danger text-center mt-3">There is no category item</h2>
                     @endif
 
                     <div class="mt-3">

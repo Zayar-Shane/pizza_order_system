@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\User\AjaxController;
@@ -89,6 +90,13 @@ Route::middleware(['auth'])->group(function () {
             Route::get('ajax/change/userRole', [UserController::class, 'userChangeRole'])->name('admin#userChangeRole');
         });
 
+        // user message for admin
+        Route::prefix('contact')->group(function () {
+            Route::get('message', [ContactController::class, 'message'])->name('contact#message');
+            Route::get('delete/message/{id}', [ContactController::class, 'deleteMessage'])->name('contact#deleteMessage');
+            Route::get('view/message/{id}', [ContactController::class, 'viewMessage'])->name('contact#viewMessage');
+        });
+
     });
 
     // user
@@ -114,6 +122,11 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('profile')->group(function () {
             Route::get('update', [UserController::class, 'updateProfile'])->name('profile#updateProfile');
             Route::post('update/{id}', [UserController::class, 'update'])->name('profile#update');
+        });
+
+        Route::prefix('contact')->group(function () {
+            Route::get('contactPage', [ContactController::class, 'contactPage'])->name('contact#contactPage');
+            Route::post('contactToAdmin', [ContactController::class, 'contactToAdmin'])->name('contact#contactToAdmin');
         });
 
         Route::prefix('ajax')->group(function () {

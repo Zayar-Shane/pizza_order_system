@@ -75,7 +75,7 @@
                         <button class="btn btn-block btn-primary font-weight-bold my-3 py-3" id="orderBtn">Proceed To
                             Checkout</button>
 
-                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3 " id="removeBtn">Cancel
+                        <button class="btn btn-block btn-danger font-weight-bold my-3 py-3 " id="removeBtn">Cancel
                             Cart
                             Items</button>
                     </div>
