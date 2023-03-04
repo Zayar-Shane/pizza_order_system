@@ -133,7 +133,7 @@
                 if ($sortingEvent == 'asc') {
                     $.ajax({
                         type: 'get',
-                        url: 'http://localhost:8000/user/ajax/pizza/list',
+                        url: '/user/ajax/pizza/list',
                         data: {
                             "status": "asc"
                         },
@@ -178,7 +178,7 @@
                 } else if ($sortingEvent == 'desc') {
                     $.ajax({
                         type: 'get',
-                        url: 'http://localhost:8000/user/ajax/pizza/list',
+                        url: '/user/ajax/pizza/list',
                         data: {
                             'status': 'desc'
                         },

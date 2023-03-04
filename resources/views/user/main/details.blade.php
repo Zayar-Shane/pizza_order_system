@@ -132,7 +132,7 @@
             $.ajax({
 
                 type: 'get',
-                url: 'http://localhost:8000/user/ajax/incease/viewCount',
+                url: '/user/ajax/incease/viewCount',
                 data: {
                     'productId': $('#pizzaId').val()
                 },
@@ -154,12 +154,12 @@
                 $.ajax({
 
                     type: 'get',
-                    url: 'http://localhost:8000/user/ajax/addToCart',
+                    url: '/user/ajax/addToCart',
                     data: $data,
                     dataType: 'json',
                     success: function(response) {
                         if (response.status == 'success') {
-                            window.location.href = "http://localhost:8000/user/homePage";
+                            window.location.href = "/user/homePage";
                         }
                     }
 

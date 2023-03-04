@@ -106,12 +106,12 @@
 
             $.ajax({
                 type: 'get',
-                url: 'http://localhost:8000/user/ajax/order',
+                url: '/user/ajax/order',
                 data: Object.assign({}, $orderList),
                 dataType: 'json',
                 success: function(response) {
                     if (response.status == 'success') {
-                        window.location.href = "http://localhost:8000/user/homePage";
+                        window.location.href = "/user/homePage";
                     }
                 }
             })
@@ -125,7 +125,7 @@
 
             $.ajax({
                 type: 'get',
-                url: 'http://localhost:8000/user/ajax/clear/cart',
+                url: '/user/ajax/clear/cart',
                 dataType: 'json',
             })
         });
@@ -137,7 +137,7 @@
             $orderId = $parentNode.find('#orderId').val();
             $.ajax({
                 type: 'get',
-                url: 'http://localhost:8000/user/ajax/clear/currentItem',
+                url: '/user/ajax/clear/currentItem',
                 data: {
                     'product_id': $productId,
                     'order_id': $orderId
