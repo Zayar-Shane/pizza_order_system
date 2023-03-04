@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Edit Category
+    Edit Admin Details
 @endsection
 
 @section('content')

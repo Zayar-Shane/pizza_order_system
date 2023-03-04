@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Category List
+    Order List
 @endsection
 
 @section('content')

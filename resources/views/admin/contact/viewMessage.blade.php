@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Update Category
+    Message Details
 @endsection
 
 @section('content')

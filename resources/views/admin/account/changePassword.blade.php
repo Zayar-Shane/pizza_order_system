@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Create Category
+    Admin Change Password
 @endsection
 
 @section('content')

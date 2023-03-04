@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Category List
+    Order Items List
 @endsection
 
 @section('content')
@@ -65,7 +65,7 @@
                                             <td>{{ $o->product_name }}</td>
                                             <td>{{ $o->created_at->format('F-j-Y') }}</td>
                                             <td>{{ $o->qty }}</td>
-                                            <td>{{ $o->total }}</td>
+                                            <td>{{ $o->total }} Kyats</td>
                                     @endforeach
                                 </tbody>
                             </table>

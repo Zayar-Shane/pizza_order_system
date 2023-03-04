@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title')
-    Create Category
+    Admin Details Page
 @endsection
 
 @section('content')
